@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Getting Started - Costa Diadema</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="icon" href="/assets/logo-gen1.png">
+        <meta name="theme-color" content="#929292">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+
+        <script>
+            var loadingScreen = document.getElementById('LoadingScreen')
+            document.onreadystatechange = () => {
+                if (document.readyState === 'complete') {
+                    setTimeout(() => {
+                    loadingScreen.classList.add('complete');
+                    
+                    setTimeout(() => {
+                        loadingScreen.classList.add('disabled')
+                    }, 400)    
+
+                    }, 200);
+                }
+            }
+        </script>
+
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Features</li>
+                <li>Download</li>
+            </ul>
+        </nav>
+
+        <header>
+            <div class="grid-gallery">
+                <div> 
+                    <div class="image-content full">
+                        <div class="image-parent">
+                            <img draggable="false" src='/assets/RestaurantThumbnail.png'>
+                        </div>
+                        <!-- <p>Equipped with interactive restaurants.</p> -->
+                    </div>
+                </div>
+                
+            
+                <div class="split-grid">
+                    <div class="image-content">
+                        <div class="image-parent">
+                            <img draggable="false" src='/assets/BridgeThumbnail.png'>
+                        </div>
+                        <p>Control your ship with ease.</p>
+                    </div>
+                    <div class="image-content">
+                        <div class="image-parent">
+                            <img draggable="false" src='/assets/SternThumbnail.png'>
+                        </div>
+                        <p>Detailed facilities at every corner.</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="offset">
+                <center>
+                    <h2>Detailed</h2>
+                    <h1>"Handcrafted with experience in mind."</h1>
+                    <h6>- IVASTZ</h6>
+                </center>
+            </section>
+
+            <section>
+                <center>
+                    <h2>Features</h2>
+                    <p>Equipped with everything you need to kickstart your career.</p>
+
+                </center>
+            </section>
+        </main> 
+
+    </body>
+</html> 
