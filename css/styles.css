@@ -24,9 +24,12 @@
     --backdrop-blur: Saturate(125%) Blur(16px);
  }
 
+html {
+    scroll-behavior:smooth;
+}
+
 body {
     margin: 0;
-
 }
 
 /* Text Styles */
@@ -68,6 +71,10 @@ p {
     color: var(--black);
     font-size: .8rem;
     margin: 0;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* Objects */
@@ -273,9 +280,25 @@ section {
     /* Ship Details */
     #details img {
         filter: brightness(0%);
+        -webkit-filter: brightness(0%);
         width: 80vw;
         max-width: 1080px;
+        
+        transition: var(--slow-transition);
+        -webkit-transition: var(--slow-transition);
     }
+
+        #details img.transition {
+            transform: translateX(100px);
+            -webkit-transform: translateX(100px);
+            opacity: 0%;
+        }
+
+        #details img.transition.active {
+            transform: translateX(0);
+            -webkit-transform: translateX(0);
+            opacity: 100%;
+        }
 
     /* Game Manager */
     #game-manager img, #game-manager p {
@@ -291,8 +314,44 @@ section {
         line-height: 1.2rem;
         text-align: center;
     }
+    
+        #game-manager img.transition {
+            transform: scale(95%);
+            -webkit-transform: scale(95%);
+
+            filter: saturate(0%) brightness(80%);
+            -webkit-filter: saturate(0%) brightness(80%);
+            
+            transition: var(--interaction-transition);
+            -webkit-transition: var(--interaction-transition);
+        }
+
+        #game-manager img.transition.active {
+            transform: scale(100%);
+            -webkit-transform: scale(100%);
+
+            filter: saturate(100%) brightness(100%);
+            -webkit-filter: saturate(100%) brightness(100%);
+        }
 
     /* Download */
     #download p {
         margin-top: 16px;
+    }
+
+    /* Gallery */
+    #gallery div.transition {
+        transform: scale(95%);
+        filter: saturate(0%);
+        -webkit-transform: scale(95%);
+        -webkit-filter: saturate(0%);
+        transition: var(--interaction-transition);
+        -webkit-transition: var(--interaction\-transition);
+    }
+
+    #gallery div.transition.active {
+        transform: scale(100%);
+        filter: saturate(1000%);
+        -webkit-transform: scale(100%);
+        -webkit-filter: saturate(100%);
     }

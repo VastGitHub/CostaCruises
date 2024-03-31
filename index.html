@@ -8,8 +8,16 @@
         <meta name="theme-color" content="#929292">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
+
+        <meta property="og:title" content="Costa Diadema"/>
+        <meta property="og:image" content="https://costadiadema.netlify.app/assets/SternThumbnail.png"/>
+        <meta property="og:description" content="Get started with your own Costa Diadema."/>
+        <meta property="og:url" content="your website link"/>
+        <meta property="og:image:width" content="2022" />
+        <meta property="og:image:height" content="830"/>
+        <meta property="og:type" content="website"/> 
     </head>
-    <body>
+    <body id="top">
 
         <script>
             var loadingScreen = document.getElementById('LoadingScreen')
@@ -29,9 +37,10 @@
 
         <nav>
             <ul>
-                <li>Home</li>
-                <li>Features</li>
-                <li>Download</li>
+                <a href="#top"><li>Home</li></a>
+                <a href="#features"><li>Features</li></a>
+                <a href="#download"><li>Download</li></a>
+                <a href="#gallery"><li>Gallery</li></a>
             </ul>
         </nav>
 
@@ -75,7 +84,7 @@
 
             <section id="details">
                 <center>
-                    <img src="/assets/TransparentShip.png">
+                    <img class="transition" src="/assets/TransparentShip.png">
 
                     <div class="details-list">
                         <div>
@@ -107,12 +116,12 @@
                 <center>
                     <h2>Game Manager</h2>
                     <h1>Permissions & Security Made Easy</h1>
-                    <img src="/assets/gifs/GameManager.gif">
+                    <img class="transition" src="/assets/gifs/GameManager.gif">
                     <p>With the help of <b>Game Manager</b>, a developer can easily change a game's permissions to inline with a specific group or no group at all. No more having to open millions of scripts, <b>Game Manager automatically connects to 80+ scripts across the game</b>.</b></p>
                 </center>
             </section>
 
-            <section>
+            <section id="features">
                 <center>
                     
                     <div class="title">
@@ -157,47 +166,47 @@
                     </div class="title">
 
                     <div class="gallery">
-                        <div class="image-content full">
+                        <div class="transition image-content full">
                             <div class="image-parent">
                                 <img draggable="false" src='/assets/BirdsEyeThumbnail.png'>
                             </div>
                         </div>
-                        <div class="image-content full">
+                        <div class="transition image-content full">
                             <div class="image-parent">
                                 <img draggable="false" src='/assets/BowBirdsEyeThumbnail.png'>
                             </div>
                         </div>
-                        <div class="image-content full">
+                        <div class="transition image-content full">
                             <div class="image-parent">
                                 <img draggable="false" src='/assets/MusterStationThumbnail.png'>
                             </div>
                         </div>
-                        <div class="image-content full">
+                        <div class="transition image-content full">
                             <div class="image-parent">
                                 <img draggable="false" src='/assets/PortThumbnail.png'>
                             </div>
                         </div>
-                        <div class="image-content full">
+                        <div class="transition image-content full">
                             <div class="image-parent">
                                 <img draggable="false" src='/assets/RestaurantThumbnail.png'>
                             </div>
                         </div>
-                        <div class="image-content full">
+                        <div class="transition image-content full">
                             <div class="image-parent">
                                 <img draggable="false" src='/assets/ShipFrontThumbnail.png'>
                             </div>
                         </div>
-                        <div class="image-content full">
+                        <div class="transition image-content full">
                             <div class="image-parent">
                                 <img draggable="false" src='/assets/SternThumbnail.png'>
                             </div>
                         </div>
-                        <div class="image-content full">
+                        <div class="transition image-content full">
                             <div class="image-parent">
                                 <img draggable="false" src='/assets/TopDeckThumbnail.png'>
                             </div>
                         </div>
-                        <div class="image-content full">
+                        <div class="transition image-content full">
                             <div class="image-parent">
                                 <img draggable="false" src='/assets/BridgeThumbnail.png'>
                             </div>
@@ -207,7 +216,7 @@
             </section>
         </main> 
 
-        
+        <script src="/js/scroll-effects.js"></script>
 
     </body>
 </html> 
