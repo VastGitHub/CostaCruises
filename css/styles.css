@@ -122,6 +122,49 @@ div.cross {
     -webkit-filter: saturate(125%);
 }
 
+#countdown {
+    font-family: var(--poppins-font);
+    color: var(--black);
+    font-size: 4rem;
+    margin: 12px 0;
+    line-height: 2.5rem; 
+    font-weight: 100;
+    margin-top: 24px;
+    text-align: center;
+    padding: 0;
+
+    gap: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    opacity: 0;
+    
+    transition: var(--slow-transition);
+    transition-property: opacity;
+    -webkit-transition: var(--slow-transition);
+    -webkit-transition-property: opacity;
+}
+
+#countdown span {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-left: 12px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 100%;
+    text-transform: lowercase;
+}
+
+#countdown section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: auto;
+    padding: 0;
+}
+
 /* Navigation */
 nav {
     position: fixed;
@@ -530,8 +573,11 @@ footer h6 {
         -webkit-transform: translateY(1rem);
     }
 
-            
-        #LoadingScreen.loading h3 {
+    #LoadingScreen h1 {
+        opacity: 0;
+    }      
+    
+        #LoadingScreen.loading h3, #LoadingScreen.loading h1 {
             transition-property: opacity, transform;
             -webkit-transition-property: opacity, transform;
 
@@ -540,7 +586,7 @@ footer h6 {
             opacity: 1;
         }
 
-        #LoadingScreen.hide-content h3 {
+        #LoadingScreen.hide-content h3, #LoadingScreen.hide-content h1 {
             transition: var(--interaction-transition);
             -webkit-transition: var(--interaction-transition);
             opacity: 0 !important;
@@ -615,6 +661,14 @@ footer h6 {
 
         nav ul {
             display: none;
+        }
+
+        #countdown {
+            flex-direction: column;
+        }
+
+        #LoadingScreen h3 {
+            margin-bottom: 16px;
         }
     }
 

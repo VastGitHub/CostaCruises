@@ -11,7 +11,7 @@
 
         <meta property="og:title" content="Costa Diadema"/>
         <meta property="og:image" content="https://costadiadema.netlify.app/assets/SternThumbnail.png"/>
-        <meta property="og:description" content="Get started with your own open source Costa Diadema."/>
+        <meta property="og:description" content="The countdown has begun, a reveal is happening soon."/>
         <meta property="og:url" content="https://costadiadema.netlify.app/">
         <meta property="og:image:width" content="2022" />
         <meta property="og:image:height" content="830"/>
@@ -20,7 +20,7 @@
         <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:url" content="https://costadiadema.netlify.app/">
         <meta property="twitter:title" content="Costa Diadema">
-        <meta property="twitter:description" content="Get started with your own open source Costa Diadema.">
+        <meta property="twitter:description" content="The countdown has begun, a reveal is happening soon.">
         <meta property="twitter:image" content="https://costadiadema.netlify.app/assets/SternThumbnail.png">
 
         <meta name="theme-color" content="#ffffff"/>
@@ -29,6 +29,7 @@
 
         <div id="LoadingScreen">
             <h3>COSTA DIADEMA</h3>
+            <h1 id="countdown"></h1>
             <img src="/assets/icons/CostaDiademaIcon.png">
         </div>
 
@@ -38,230 +39,87 @@
                 loadingScreen.classList.add('loading')
             }, 200);
 
-            document.onreadystatechange = () => {
+
+
+            // Set the date we're counting down to
+            var countDownDate = new Date("Apr 5, 2024 18:00:00").getTime();
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
                 
-                    if (document.readyState === 'complete') {
-                        setTimeout(() => {
-                        loadingScreen.classList.add('hide-content');
-
-                            window.scrollTo(0, 0);
-
-                            setTimeout(() => {
-                                loadingScreen.classList.add('completed');
-                            }, 400);
-
-                        setTimeout(() => {
-                            loadingScreen.style.display = 'none'
-                        }, 800);
-                    }, 800);
-                }
-            }
-        </script>
-
-        <nav>
-            <a href="#top"><h1>Costa Diadema</h1></a>
-            <ul>
-                <a href="#top"><li>Home</li></a>
-                <a href="#features"><li>Features</li></a>
-                <a href="#download"><li>Download</li></a>
-                <a href="#gallery"><li>Gallery</li></a>
-            </ul>
-        </nav>
-
-        <header>
-            <div class="grid-gallery">
-                <div class="image-container"> 
-                    <div class="image-content full">
-                        <div class="image-parent">
-                            <!-- <video disablePictureInPicture loop="true" autoplay="true"  preload="metadata" draggable="false" src='/assets/gifs/SternVideo.mp4'> -->
-                            <img id="stern-video" src="/assets/gifs/CostaSternDrone.gif">        
-                        </div>
-                        <!-- <p>Equipped with interactive restaurants.</p> -->
-                    </div>
-                </div>
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
                 
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+            // Output the result in an element with id="demo"
+            // document.getElementById("countdown").innerHTML = days + "<span> days</span> " + hours + "<span> hours</span> "
+            // + minutes + "<span> minutes</span> " + seconds + "<span> seconds</span> ";
             
-                <div class="split-grid">
-                    <div class="image-content">
-                        <div class="image-parent">
-                            <img draggable="false" src='/assets/BridgeThumbnail.png'>
-                        </div>
-                        <p>Control your ship with ease.</p>
-                    </div>
-                    <div class="image-content">
-                        <div class="image-parent">
-                            <img draggable="false" src='/assets/SternThumbnail.png'>
-                        </div>
-                        <p>Detailed facilities at every corner.</p>
-                    </div>
-                </div>
-            </div>
-        </header>
+            var dateString = "";
 
-        <main>
-            <section class="offset">
-                <center>
-                    <h2>Detailed</h2>
-                    <h1>"Handcrafted with experience in mind."</h1>
-                    <h6 id="author-tag" class="transition">- IVASTZ</h6>
-                </center>
-            </section>
+            if (days === 1){
+                dateString += "<section>" + days + "<span> day</span></section> "
+            } else if (days > 0) {
+                dateString += "<section>" + days + "<span> days</span></section> "
+            }
 
-            <section id="details">
-                <center>
-                    <img class="transition" src="/assets/TransparentShip.png">
+            if (hours === 1){
+                dateString += "<section>" + hours + "<span> hour</span></section> "
+            } else if (hours > 0) {
+                dateString += "<section>" + hours + "<span> hours</span></section> "
+            } else if (hours <= 0 && days > 0){
+                dateString += "<section>" + 0 + "<span> hours</span></section> "
+            }
 
-                    <div class="details-list">
-                        <div>
-                            <h2>6</h2>
-                            <P>DECKS</P>
-                        </div>
-                        <div>
-                            <h2>44</h2>
-                            <P>CABINS</P>
-                        </div>
-                        <div>
-                            <h2>2</h2>
-                            <P>POOLS</P>
-                        </div>
-                        <div>
-                            <h2>2</h2>
-                            <P>RESTAURANTS</P>
-                        </div>
-                        <div>
-                            <h2>2</h2>
-                            <P>BARS</P>
-                        </div>
-                    </div>
-                </center>
-            </section>
+            if (minutes === 1){
+                dateString += "<section>" + minutes + "<span> minute</span></section> "
+            } else if (minutes > 0){
+                dateString += "<section>" + minutes + "<span> minutes</span></section> "
+            } else if (minutes <= 0 && hours > 0){
+                dateString += "<section>" + 0 + "<span> minutes</span></section> "
+            }
 
+            if (seconds === 1){
+                dateString +="<section>" + seconds + "<span> second</span></section> "
+            } else if (seconds > 0){
+                dateString += "<section>" +seconds + "<span> seconds</span></section> "
+            } else if (seconds <= 0 && minutes > 0){
+                dateString += "<section>" + 0 + "<span> seconds</span></section> "
+            } else {
+                dateString += "launching..."
+            }
 
-            <section id="game-manager" class="offset">
-                <center>
-                    <h2>Game Manager</h2>
-                    <h1>Permissions & Security Made Easy</h1>
-                    <img class="transition" src="/assets/gifs/GameManager.gif">
-                    <p>With the help of <b>Game Manager</b>, a developer can easily change a game's permissions to inline with a specific group or no group at all. No more having to open millions of scripts, <b>Game Manager automatically connects to 80+ scripts across the game</b>.</b></p>
-                </center>
-            </section>
+            document.getElementById("countdown").innerHTML = dateString
 
-            <section id="features">
-                <center>
-                    
-                    <div class="title">
-                        <h2>Features</h2>
-                        <h4>Equipped with everything you need to kickstart your career.</h4>
-                    </div class="title">
-
-                    <ul class="features-list">
-                        <li><div class='check'></div> Fully Functional Bridge</li>
-                        <li><div class='check'></div> Smooth Day/Night Control</li>
-                        <li><div class='check'></div> Island Movement System</li>
-                        <li><div class='check'></div> Security Tools</li>
-                        <li><div class='check'></div> Destinations & Attractions</li>
-                        <li><div class='check'></div> Interactive Ship Cabins</li>
-                        <li><div class='check'></div> Weather Control</li>
-                        <li><div class='check'></div> Staff Uniforms</li>
-                        <li><div class='check'></div> Scenic Light Control</li>
-                        <li><div class='check'></div> Server Lock</li>
-                        <li><div class='check'></div> Custom Commands</li>
-                        <li><div class='check'></div> Completely Open Source</li>
-                        <li><i>And much more!</i></li>
-                        <hr>
-                        <li><div class='cross'></div> CheckMeIn License</li>
-                        <li><div class='cross'></div> Backdoors or Secrets</li>
-                       </ul>
-                </center>
-            </section>
-
-            <section id="download" class="offset">
-                <center>
-                    <h2>Download</h2>
-                    <p>Start your journey in Ro-Cruising today, <b>download the file below </b>.</b></p>    
-                </center>
-            </section>
-
-            <section id="gallery">
-                <center>
-                    
-                    <div class="title">
-                        <h2>Gallery</h2>
-                        <h4>Grasp a quick glimpse of the ship and all of its features.</h4>
-                    </div class="title">
-
-                    <div class="gallery">
-                        <div class="transition image-content full">
-                            <div class="image-parent">
-                                <img draggable="false" src='/assets/BirdsEyeThumbnail.png'>
-                            </div>
-                        </div>
-                        <div class="transition image-content full">
-                            <div class="image-parent">
-                                <img draggable="false" src='/assets/BowBirdsEyeThumbnail.png'>
-                            </div>
-                        </div>
-                        <div class="transition image-content full">
-                            <div class="image-parent">
-                                <img draggable="false" src='/assets/MusterStationThumbnail.png'>
-                            </div>
-                        </div>
-                        <div class="transition image-content full">
-                            <div class="image-parent">
-                                <img draggable="false" src='/assets/PortThumbnail.png'>
-                            </div>
-                        </div>
-                        <div class="transition image-content full">
-                            <div class="image-parent">
-                                <img draggable="false" src='/assets/RestaurantThumbnail.png'>
-                            </div>
-                        </div>
-                        <div class="transition image-content full">
-                            <div class="image-parent">
-                                <img draggable="false" src='/assets/ShipFrontThumbnail.png'>
-                            </div>
-                        </div>
-                        <div class="transition image-content full">
-                            <div class="image-parent">
-                                <img draggable="false" src='/assets/SternThumbnail.png'>
-                            </div>
-                        </div>
-                        <div class="transition image-content full">
-                            <div class="image-parent">
-                                <img draggable="false" src='/assets/TopDeckThumbnail.png'>
-                            </div>
-                        </div>
-                        <div class="transition image-content full">
-                            <div class="image-parent">
-                                <img draggable="false" src='/assets/BridgeThumbnail.png'>
-                            </div>
-                        </div>
-                    </div>
-                </center>
-            </section>
-        </main> 
-
-        <footer class="offset">
-            <section>
-                <ul class="disclaimers">
-                    <h6>DISCLAIMERS</h6>
-                    <li>All individuals who have developed, contributed, or participated in the production of the <i>Costa Diadema</i> is respectfully credited and honored.</p>
-                    <li>This file is intended for individuals who have experience in ROBLOX developing. All questions regarding setup, addons, and much more, can voided and ignored at any time. </li>
-                    <li>All photos, videos, GIFs, and icons are granted for public use. No photo, video, GIF, or icon, is held restricted by any form of copyright.</li>
-                    <li>The download file provided is under no protection of copyright and is for the public domain. You can copy, modify, distribute and perform the work, all without asking permission. </li>
-                </ul>
+            // If the count down is over, write some text 
+            if (distance <= 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "launching...";
                 
-                <ul class="footer-nav">
-                    <a href="#top"><h3>COSTA DIADEMA</h3></a>
-                </ul>
-                <div id="copyright" align="center">©<span id="year"></span> www.costadiadema.netlify.app. All Rights Reserved.</div>
-            </section>
-        </footer>
 
-        <script src="/js/scroll-effects.js"></script>
-        <script>
-            document.getElementById("year").innerHTML = new Date().getFullYear();
+                setTimeout(() => {
+                    loadingScreen.classList.add('hide-content');
+                }, 4000 - 400);
+
+                setTimeout(() => {
+                    window.location.href = "https://5500-vastgithub-costacruises-1x47bxe8sbz.ws-us110.gitpod.io/index.html";        
+                }, 4000);
+            }
+            }, 1000);
+
+
+
+
         </script>
+
+        
 
     </body>
 </html> 
