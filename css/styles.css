@@ -117,7 +117,7 @@ div.cross {
     margin-right: 8px;
 }
 
-video {
+#stern-video {
     filter: saturate(125%);
     -webkit-filter: saturate(125%);
 }
@@ -126,7 +126,8 @@ video {
 nav {
     position: fixed;
     top: 0;
-    width: calc(100vw - 64px);
+    width: 100vw;
+    max-width: 100vw;
     height: auto;
     padding-left: 32px;
     background: #ffffffde;
@@ -478,6 +479,105 @@ footer h6 {
         transform: translateY(0);
         -webkit-transform: translateY(0);
     }
+
+    /* Details */
+    #details {
+        overflow-x: hidden;
+    }
+
+    /* Loading Screens */
+    #LoadingScreen {
+        background-color: #fff;
+
+        position: fixed;
+        left: 0;
+        top: 0;
+
+        display: block;
+        width: 100vw;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        z-index: 101;
+        
+        transition: var(--slow-transition);
+        transition-property: opacity, transform;
+        -webkit-transition: var(--slow-transition);
+        -webkit-transition-property: opacity, transform;
+    }
+
+        #LoadingScreen.completed {
+            opacity: 0;
+        }
+
+    #LoadingScreen h3 {
+        height: auto;
+        font-size: 2rem;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+
+        transition: var(--slow-transition);
+        transition-property: opacity;
+        -webkit-transition: var(--slow-transition);
+        -webkit-transition-property: opacity;
+    
+        transform: translateY(1rem);
+        -webkit-transform: translateY(1rem);
+    }
+
+            
+        #LoadingScreen.loading h3 {
+            transition-property: opacity, transform;
+            -webkit-transition-property: opacity, transform;
+
+            transform: translateY(0);
+            -webkit-transform: translateY(0);
+            opacity: 1;
+        }
+
+        #LoadingScreen.hide-content h3 {
+            transition: var(--interaction-transition);
+            -webkit-transition: var(--interaction-transition);
+            opacity: 0 !important;
+        }
+
+    #LoadingScreen img {
+        position: fixed;
+        bottom: 64px;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+
+        opacity: 0;
+
+        width: 48px;
+        height: 48px;
+
+        filter: brightness(0);
+        -webkit-filter: brightness(0);
+
+        transition: var(--slow-transition);
+        -webkit-transition: var(--slow-transition);
+    }
+
+        #LoadingScreen.loading img {
+            transition-property: opacity;
+            -webkit-transition-property: opacity;
+            opacity: 1;
+        }
+
+        #LoadingScreen.hide-content img {
+            transition: var(--interaction-transition);
+            -webkit-transition: var(--interaction-transition);
+            opacity: 0 !important;
+        }
+
+    
 
     /* Device Responsiveness */
     @media screen and (max-width: 800px) {

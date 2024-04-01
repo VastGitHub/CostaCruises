@@ -2,35 +2,58 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Getting Started - Costa Diadema</title>
+        <title>Costa Diadema</title>
         <link rel="stylesheet" href="/css/styles.css">
-        <link rel="icon" href="/assets/logo-gen1.png">
+        <link rel="icon" href="/assets/icons/CostaDiademaIcon.png">
         <meta name="theme-color" content="#929292">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
 
         <meta property="og:title" content="Costa Diadema"/>
         <meta property="og:image" content="https://costadiadema.netlify.app/assets/SternThumbnail.png"/>
-        <meta property="og:description" content="Get started with your own Costa Diadema."/>
-        <meta property="og:url" content="your website link"/>
+        <meta property="og:description" content="Get started with your own open source Costa Diadema."/>
+        <meta property="og:url" content="https://costadiadema.netlify.app/">
         <meta property="og:image:width" content="2022" />
         <meta property="og:image:height" content="830"/>
         <meta property="og:type" content="website"/> 
+
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://costadiadema.netlify.app/">
+        <meta property="twitter:title" content="Costa Diadema">
+        <meta property="twitter:description" content="Get started with your own open source Costa Diadema.">
+        <meta property="twitter:image" content="https://costadiadema.netlify.app/assets/SternThumbnail.png">
+
+        <meta name="theme-color" content="#ffffff"/>
     </head>
     <body id="top">
 
+        <div id="LoadingScreen">
+            <h3>COSTA DIADEMA</h3>
+            <img src="/assets/icons/CostaDiademaIcon.png">
+        </div>
+
         <script>
             var loadingScreen = document.getElementById('LoadingScreen')
-            document.onreadystatechange = () => {
-                if (document.readyState === 'complete') {
-                    setTimeout(() => {
-                    loadingScreen.classList.add('complete');
-                    
-                    setTimeout(() => {
-                        loadingScreen.classList.add('disabled')
-                    }, 400)    
+            setTimeout(() => {
+                loadingScreen.classList.add('loading')
+            }, 200);
 
-                    }, 200);
+            document.onreadystatechange = () => {
+                
+                    if (document.readyState === 'complete') {
+                        setTimeout(() => {
+                        loadingScreen.classList.add('hide-content');
+
+                            window.scrollTo(0, 0);
+
+                            setTimeout(() => {
+                                loadingScreen.classList.add('completed');
+                            }, 400);
+
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none'
+                        }, 800);
+                    }, 800);
                 }
             }
         </script>
@@ -50,7 +73,8 @@
                 <div class="image-container"> 
                     <div class="image-content full">
                         <div class="image-parent">
-                            <video disablePictureInPicture loop="true" autoplay="true"  preload="metadata" draggable="false" src='/assets/gifs/SternVideo.mp4'>
+                            <!-- <video disablePictureInPicture loop="true" autoplay="true"  preload="metadata" draggable="false" src='/assets/gifs/SternVideo.mp4'> -->
+                            <img id="stern-video" src="/assets/gifs/CostaSternDrone.gif">        
                         </div>
                         <!-- <p>Equipped with interactive restaurants.</p> -->
                     </div>
