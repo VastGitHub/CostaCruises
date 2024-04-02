@@ -681,6 +681,13 @@ footer h6 {
         }
     }
 
+    @media screen and (max-height: 700px) {
+        #LoadingScreen.cd-enabled {
+            justify-content: flex-start;
+            margin-top: 96px;
+        }
+    }
+
     /* Animations */
     @keyframes sideslide {
         0% {
