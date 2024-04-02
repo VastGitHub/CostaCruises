@@ -661,7 +661,8 @@ footer h6 {
         }
         
         nav {
-            justify-content: center;;
+            justify-content: center;
+            padding-left: 0;
         }
 
         nav ul {
@@ -678,6 +679,12 @@ footer h6 {
 
         #LoadingScreen.cd-enabled {
             margin-top: -32px;
+        }
+
+        nav h1 {
+            width: 100%;
+            text-align: center;
+            padding-left: 0;
         }
     }
 
