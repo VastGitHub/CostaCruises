@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Costa Diadema</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="icon" href="/assets/icons/CostaDiademaIcon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+
+        <meta property="og:title" content="Costa Diadema"/>
+        <meta property="og:image" content="https://costadiadema.netlify.app/assets/CountdownBanner.png"/>
+        <meta property="og:description" content="The countdown has begun, a reveal is happening soon."/>
+        <meta property="og:url" content="https://costadiadema.netlify.app/">
+        <meta property="og:image:width" content="2022" />
+        <meta property="og:image:height" content="830"/>
+        <meta property="og:type" content="website"/> 
+
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://costadiadema.netlify.app/">
+        <meta property="twitter:title" content="Costa Diadema">
+        <meta property="twitter:description" content="The countdown has begun, a reveal is happening soon.">
+        <meta property="twitter:image" content="https://costadiadema.netlify.app/assets/CountdownBanner.png">
+
+        <meta name="theme-color" content="#ffffff"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+    </head>
+    <body id="top">
+
+        <div id="LoadingScreen" class="cd-enabled">
+            <h3>COSTA DIADEMA</h3>
+            <h5 style="margin-top: 12px;">Nice try, I guess.</h5>
+            <p style="margin-top: 8px; font-weight: 200;">ERROR 404: NO PAGE FOUND</p>
+            <img src="/assets/icons/CostaDiademaIcon.png">
+        </div>
+
+        <script>
+            var loadingScreen = document.getElementById('LoadingScreen')
+            setTimeout(() => {
+                loadingScreen.classList.add('loading')
+            }, 200);
+        </script>
+    </body>
+</html> 

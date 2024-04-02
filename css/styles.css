@@ -71,6 +71,17 @@ h4 {
     line-height: .8rem;
 }
 
+h5 {
+    font-family: var(--poppins-font);
+    color: var(--black);
+    font-size: 3rem;
+    margin: 12px 0;
+    line-height: 2.5rem; 
+    margin-top: 24px;
+    text-align: center;
+    font-weight: 100 !important;
+}
+
 h6 {
     font-family: var(--poppins-font);
     color: var(--black);
