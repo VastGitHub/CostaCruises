@@ -163,7 +163,10 @@ div.cross {
     align-items: flex-end;
     height: auto;
     padding: 0;
+    /* padding-bottom: 64px; */
 }
+
+
 
 /* Navigation */
 nav {
@@ -623,7 +626,9 @@ footer h6 {
             opacity: 0 !important;
         }
 
-    
+        #LoadingScreen.cd-enabled {
+            margin-top: -16px;
+        }
 
     /* Device Responsiveness */
     @media screen and (max-width: 800px) {
@@ -669,6 +674,10 @@ footer h6 {
 
         #LoadingScreen h3 {
             margin-bottom: 16px;
+        }
+
+        #LoadingScreen.cd-enabled {
+            margin-top: -32px;
         }
     }
 
