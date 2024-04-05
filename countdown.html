@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Costa Diadema</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="icon" href="/assets/icons/CostaDiademaIcon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+
+        <meta property="og:title" content="Costa Diadema"/>
+        <meta property="og:image" content="https://costadiadema.netlify.app/assets/RevealIncoming.png"/>
+        <meta property="og:description" content="The countdown has begun, a reveal is happening soon."/>
+        <meta property="og:url" content="https://costadiadema.netlify.app/">
+        <meta property="og:image:width" content="2022" />
+        <meta property="og:image:height" content="830"/>
+        <meta property="og:type" content="website"/> 
+
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://costadiadema.netlify.app/">
+        <meta property="twitter:title" content="Costa Diadema">
+        <meta property="twitter:description" content="The countdown has begun, a reveal is happening soon.">
+        <meta property="twitter:image" content="https://costadiadema.netlify.app/assets/RevealIncoming.png">
+
+        <meta name="theme-color" content="#ffffff"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+    </head>
+    <body id="top">
+
+        <div id="LoadingScreen" class="cd-enabled">
+            <h3>COSTA DIADEMA</h3>
+            <h1 id="countdown"></h1>
+            <img src="/assets/icons/CostaDiademaIcon.png">
+        </div>
+
+        <script>
+            var loadingScreen = document.getElementById('LoadingScreen')
+            setTimeout(() => {
+                loadingScreen.classList.add('loading')
+            }, 200);
+
+
+            // Set the date we're counting down to
+            var CDD = new Date("Apr 5, 2024 24:00:00")
+
+// Get the user's time zone offset in minutes
+const userTimeZoneOffset = new Date().getTimezoneOffset();
+
+// Adjust the target date based on the time zone offset
+CDD.setMinutes(CDD.getMinutes() - userTimeZoneOffset);
+
+var countDownDate = CDD.getTime;
+             // Set the epoch time we're counting down to (Apr 5, 2024 18:00:00 UTC)
+        var countDownEpoch = 1712358000000; // This is equivalent to new Date("Apr 5, 2024 18:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get current time in milliseconds since epoch
+    var now = new Date().getTime();
+
+    // Find the difference in milliseconds between now and the count down time
+    var distance = countDownEpoch - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Output the result in an element with id="countdown"
+    var dateString = "";
+
+
+            if (days === 1){
+                dateString += "<section>" + days + "<span> day</span></section> "
+            } else if (days > 0) {
+                dateString += "<section>" + days + "<span> days</span></section> "
+            }
+
+            if (hours === 1){
+                dateString += "<section>" + hours + "<span> hour</span></section> "
+            } else if (hours > 0) {
+                dateString += "<section>" + hours + "<span> hours</span></section> "
+            } else if (hours <= 0 && days > 0){
+                dateString += "<section>" + 0 + "<span> hours</span></section> "
+            }
+
+            if (minutes === 1){
+                dateString += "<section>" + minutes + "<span> minute</span></section> "
+            } else if (minutes > 0){
+                dateString += "<section>" + minutes + "<span> minutes</span></section> "
+            } else if (minutes <= 0 && hours > 0){
+                dateString += "<section>" + 0 + "<span> minutes</span></section> "
+            }
+
+            if (seconds === 1){
+                dateString +="<section>" + seconds + "<span> second</span></section> "
+            } else if (seconds > 0){
+                dateString += "<section>" +seconds + "<span> seconds</span></section> "
+            } else if (seconds <= 0 && minutes > 0){
+                dateString += "<section>" + 0 + "<span> seconds</span></section> "
+            } else {
+                dateString += "launching..."
+            }
+
+            document.getElementById("countdown").innerHTML = dateString
+
+            // If the count down is over, write some text 
+            if (distance <= 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "launching...";
+                
+
+                setTimeout(() => {
+                    loadingScreen.classList.add('hide-content');
+                }, 4000 - 400);
+
+                setTimeout(() => {
+                    window.location.href = "https://costadiadema.netlify.app/";        
+                }, 4000);
+            }
+            }, 1000);
+
+
+
+
+        </script>
+
+        
+
+    </body>
+</html> 
