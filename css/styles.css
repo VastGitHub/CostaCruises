@@ -177,7 +177,68 @@ div.cross {
     /* padding-bottom: 64px; */
 }
 
+#explaination {
+    width: 80vw;
+}
 
+#explaination h3 {
+    font-size: 1.2rem;
+    text-align: left;
+    margin-top: 32px;
+    width: 100%;
+}
+
+#explaination p {
+    font-size: 1.2rem;
+    text-align: left;
+    margin-top: 32px;
+    width: 100%;
+
+
+}
+
+#explaination h6 {
+    text-align: left;
+    width: 100%;
+}
+
+mark {
+    background-color: #ffe8bd;
+    padding: 0 8px;
+}
+
+button {
+    font-family: var(--poppins-font);
+    color: var(--black);
+    font-size: 1.8rem;
+    font-weight: 600;
+    /* letter-spacing: .5px; */
+
+    background: var(--offset-white);
+
+    padding: var(--default-padding);
+    margin-right: 16px;
+
+    margin-top: 32px;
+
+    cursor: pointer;
+    border: 2px solid !important;
+    border-radius: 8px;
+    height: calc(1.8rem + 4px + 32px);
+
+    transition: var(--interaction-transition);
+
+}
+
+button span {
+    font-size: .8rem;
+}
+
+
+button:hover {
+    background: var(--black);
+    color: var(--offset-white)
+}
 
 /* Navigation */
 nav {
