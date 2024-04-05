@@ -40,29 +40,37 @@
             }, 200);
 
 
-
             // Set the date we're counting down to
-            var countDownDate = new Date("Apr 5, 2024 18:00:00").getTime();
-            // Update the count down every 1 second
-            var x = setInterval(function() {
+            var CDD = new Date("Apr 5, 2024 24:00:00")
 
-            // Get today's date and time
-            var now = new Date().getTime();
-                
-            // Find the distance between now and the count down date
-            var distance = countDownDate - now;
-                
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-            // Output the result in an element with id="demo"
-            // document.getElementById("countdown").innerHTML = days + "<span> days</span> " + hours + "<span> hours</span> "
-            // + minutes + "<span> minutes</span> " + seconds + "<span> seconds</span> ";
-            
-            var dateString = "";
+// Get the user's time zone offset in minutes
+const userTimeZoneOffset = new Date().getTimezoneOffset();
+
+// Adjust the target date based on the time zone offset
+CDD.setMinutes(CDD.getMinutes() - userTimeZoneOffset);
+
+var countDownDate = CDD.getTime;
+             // Set the epoch time we're counting down to (Apr 5, 2024 18:00:00 UTC)
+        var countDownEpoch = 1712358000000; // This is equivalent to new Date("Apr 5, 2024 18:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get current time in milliseconds since epoch
+    var now = new Date().getTime();
+
+    // Find the difference in milliseconds between now and the count down time
+    var distance = countDownEpoch - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Output the result in an element with id="countdown"
+    var dateString = "";
+
 
             if (days === 1){
                 dateString += "<section>" + days + "<span> day</span></section> "
